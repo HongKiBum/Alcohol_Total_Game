@@ -188,7 +188,7 @@ class total_game:
   
 # 음성 코드
 
-    def initialize_gui(self, root, width, height, bg_color):
+    def pronunciation_initialize_gui(self, root, width, height, bg_color):
         root.title("어려운 문장 발음 평가 프로그램")
         root.geometry(f"{width}x{height}")
         root.configure(bg=bg_color)
@@ -299,7 +299,7 @@ class total_game:
     def pronunciation_app(self):
         # Initialize GUI
         root = Tk()
-        root = self.initialize_gui(root, width=800, height=500, bg_color="#FFFFFF")
+        root = self.pronunciation_initialize_gui(root, width=800, height=500, bg_color="#FFFFFF")
 
         # Sentences for evaluation
         sentences = [
@@ -355,7 +355,7 @@ class total_game:
 #사진 코드
 
 
-    def initialize_gui(self, state):
+    def group_initialize_gui(self, state):
         """GUI 초기화"""
         root = state["root"]
         root.title("Group Photo Analysis")
@@ -483,7 +483,7 @@ class total_game:
             "mission_entry": None,
         }
 
-        self.initialize_gui(state)
+        self.group_initialize_gui(state)
         root.mainloop()
 
 #영수증 코드
