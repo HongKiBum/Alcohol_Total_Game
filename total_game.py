@@ -114,18 +114,18 @@ class total_game:
         pygame.quit()
   
     def guesse_game_app(self,images):
-    """
-    인물 맞추기 게임을 실행합니다. 이미지가 랜덤 순서로 표시됩니다.
-
-    Args:
-        images (list): 각 항목이 {"image": "이미지 경로", "answer": "정답"} 형태의 딕셔너리로 이루어진 리스트.
-    """
-    # 이미지 랜덤 섞기
-    random.shuffle(images)
-
-    # 초기 변수 설정
-    current_index = [0]  # 리스트로 선언하여 내부 함수에서 변경 가능
-    score = [0]          # 리스트로 선언하여 내부 함수에서 변경 가능
+        """
+        인물 맞추기 게임을 실행합니다. 이미지가 랜덤 순서로 표시됩니다.
+    
+        Args:
+            images (list): 각 항목이 {"image": "이미지 경로", "answer": "정답"} 형태의 딕셔너리로 이루어진 리스트.
+        """
+        # 이미지 랜덤 섞기
+        random.shuffle(images)
+    
+        # 초기 변수 설정
+        current_index = [0]  # 리스트로 선언하여 내부 함수에서 변경 가능
+        score = [0]          # 리스트로 선언하여 내부 함수에서 변경 가능
 
         def check_answer():
             user_input = entry.get().strip()
