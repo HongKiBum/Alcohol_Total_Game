@@ -329,7 +329,7 @@ class total_game:
         file_path = filedialog.askopenfilename(filetypes=[("Audio Files", "*.wav;*.mp3")])
         if file_path:
             result, avg_percentage = self.analyze_pronunciation(self.selected_sentence, file_path)
-            self.result_label.config(text=f"발음 정확도: {result} ({avg_percentage:
+            self.result_label.config(text=f"발음 정확도: {result} ({avg_percentage:.2f}%)")
 
 
 #사진 코드
