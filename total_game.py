@@ -556,8 +556,8 @@ class total_game:
                             amount_per_person = total_amount / num_people
     
                             # 금액 포맷팅
-                            formatted_total = f"{total_amount:,.2f} 원"
-                            formatted_per_person = f"{amount_per_person:,.2f} 원"
+                            formatted_total = f"{total_amount:,} 원"
+                            formatted_per_person = f"{amount_per_person:,.0f} 원"
     
                             # 결과 출력
                             result_text = f"총 금액: {formatted_total}\n1인당 금액: {formatted_per_person}"
