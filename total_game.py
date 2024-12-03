@@ -42,6 +42,11 @@ class total_game:
             state["img_label"].image = img
             state["img_label"].text = image_path
 
+    def save_result_image(self, image, save_path="output.jpg"):
+        """분석 결과 이미지를 저장"""
+        cv2.imwrite(save_path, image)
+        messagebox.showinfo("Image Saved", f"분석된 이미지를 저장했습니다.\n경로: {os.path.abspath(save_path)}")
+
 
     def start_analysis(self, state):
         """분석 시작"""
