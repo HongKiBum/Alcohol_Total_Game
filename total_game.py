@@ -246,7 +246,7 @@ class total_game:
         detailed_results = []
 
         for correct_word, recorded_word in zip(correct_words, recorded_words):
-            corrected_recorded_word = similar_sound_correction(recorded_word)
+            corrected_recorded_word = self.similar_sound_correction(recorded_word)
             ratio = SequenceMatcher(None, correct_word, corrected_recorded_word).ratio()
             detailed_results.append((correct_word, corrected_recorded_word, ratio))
             total_ratio += ratio
@@ -281,10 +281,10 @@ class total_game:
 
 
     def analyze_pronunciation(self, correct_text, audio_file, result_label):
-        recorded_text = recognize_audio(audio_file)
+        recorded_text = self.recognize_audio(audio_file)
         print(f"녹음된 텍스트: {recorded_text}")
 
-        result, avg_percentage, _ = evaluate_pronunciation(correct_text, recorded_text)
+        result, avg_percentage, _ = self.evaluate_pronunciation(correct_text, recorded_text)
         print(f"발음 정확도: {result} (평균 유사도: {avg_percentage:.2f}%)")
 
         result_label.config(text=f"발음 정확도: {result} ({avg_percentage:.2f}%)")
