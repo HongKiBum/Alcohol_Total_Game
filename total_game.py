@@ -16,7 +16,7 @@ from difflib import SequenceMatcher
 import speech_recognition as sr
 import pytesseract
 import shutil
-
+import tkinter as tk
 
 
 class total_game:
