@@ -488,7 +488,7 @@ class total_game:
 
 #영수증 코드
       
-    def receipt():
+    def receipt(self):
             """
             영수증 이미지에서 금액을 추출하고, 인원 수로 나누어 금액을 계산하는 모든 작업을 하나의 함수에서 처리하는 함수.
             """
