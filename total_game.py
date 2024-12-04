@@ -27,10 +27,6 @@ class total_game:
 # roulette
     
     def initialize_pygame(self, width, height):
-        """
-        룰렛을 만들고 룰렛이 돌아가는 애니메이션 창을 띄웁니다. ".RouletteGame([values])" 함수를 사용하여 실행시킬 수 있습니다.
-        [values]에는 룰렛에 돌리고 싶은 데이터를 리스트 형태로 원하는 개수만큼 문자열 형태로 입력한다.
-        """
         pygame.init()
         screen = pygame.display.set_mode((width, height))
         pygame.display.set_caption("Roulette")
@@ -81,6 +77,15 @@ class total_game:
         return values[index]
 
     def RouletteGame(self, values):
+        """    
+        룰렛 게임을 실행합니다. 사용자는 마우스 클릭으로 룰렛을 돌리고, 다시 클릭하여 멈출 수 있습니다. 멈춘 후 선택된 값이 콘솔에 출력됩니다.
+        
+        :param values: 룰렛에 표시할 값들의 리스트.
+        :type values: list[str]
+        :raise ValueError: values가 비어 있거나 유효하지 않을 경우 발생합니다.
+        :return: None
+        :rtype: None
+        """
         width, height = 500, 500
         screen, clock = self.initialize_pygame(width, height)
         font = pygame.font.SysFont("malgungothic", 20)
@@ -121,12 +126,17 @@ class total_game:
 
 # guesse person
     
-    def guesse_game_app(self,images):
+    def GuessPersonGame(self,images):
         """
-        인물 맞추기 게임을 실행합니다. 이미지가 랜덤 순서로 표시됩니다.
-    
-        Args:
-            images (list): 각 항목이 {"image": "이미지 경로", "answer": "정답"} 형태의 딕셔너리로 이루어진 리스트.
+
+        인물 맞추기 게임을 실행합니다. 사용자는 랜덤으로 표시되는 이미지를 보고 정답을 입력합니다. 게임 종료 후 점수가 표시됩니다.
+        
+        :param images: 각 항목이 {"images": "이미지 경로", "answer": "정답"} 형태의 딕셔너리로 이루어진 리스트.
+        :type images: list[dict]
+        :raise FileNotFoundError: 이미지 파일이 경로에서 발견되지 않을 경우 발생합니다.
+        :raise ValueError: 이미지 리스트가 비어 있거나 잘못된 형식일 경우 발생합니다.
+        :return: None
+        :rtype: None
         """
         # 이미지 랜덤 섞기
         random.shuffle(images)
@@ -197,7 +207,6 @@ class total_game:
 # pronunciation
 
     def pronunciation_initialize_gui(self, root, width, height, bg_color):
-        
         root.title("어려운 문장 발음 평가 프로그램")
         root.geometry(f"{width}x{height}")
         root.configure(bg=bg_color)
@@ -247,12 +256,6 @@ class total_game:
 
 
     def evaluate_pronunciation(self, correct_text, recorded_text):
-                """
-        사용자가 발음한 텍스트와 기준 문장을 비교하여 발음 정확도를 평가합니다.
-        - 단어별 유사도를 계산하고 평균 유사도를 바탕으로 발음의 정확성을 판별합니다.
-        - 정확도는 "정확", "조금 틀림", "많이 틀림"으로 구분됩니다.
-        - 결과로 발음 평가와 세부 비교 정보를 반환합니다.
-        """
         correct_words = re.findall(r'\S+', correct_text)
         recorded_words = re.findall(r'\S+', recorded_text)
 
@@ -280,12 +283,6 @@ class total_game:
 
 
     def recognize_audio(self, file_path):
-                """
-    업로드된 오디오 파일을 텍스트로 변환하는 기능을 수행하는 함수입니다.
-    - 음성 파일을 `speech_recognition` 라이브러리를 사용해 텍스트로 변환합니다.
-    - 한국어(Korean) 인식을 위해 `ko-KR` 설정을 사용합니다.
-    - 음성을 인식하지 못하거나 서비스 오류가 발생할 경우 적절한 에러 메시지를 반환합니다.
-    """  
         recognizer = sr.Recognizer()
         audio_file = sr.AudioFile(file_path)
 
@@ -317,13 +314,16 @@ class total_game:
             self.analyze_pronunciation(selected_sentence, file_path, result_label)
 
 
-    def pronunciation_app(self):
-                """
-    발음 평가 게임을 실행하는 메인 함수입니다.
-    - GUI를 초기화하고 사용자 인터페이스 요소(라벨, 버튼 등)를 생성합니다.
-    - 사용자가 랜덤 문장을 선택하고, 오디오 파일을 업로드하여 발음 평가를 진행할 수 있도록 연결합니다.
-    - 전체 발음 게임의 흐름을 관리하며, 사용자와의 상호작용을 제공합니다.
-        """  
+    def PronunciationApp(self):
+        """
+        사용자가 발음한 텍스트와 기준 문장을 비교하여 발음의 정확도를 평가합니다. 발음 평가 과정에서, 먼저 사용자 발음과 기준 문장을 단어 단위로 비교하여 각 단어의 유사도를 계산합니다. 이후 계산된 단어별 유사도를 평균 내어 전체 발음의 정확성을 판별합니다. 발음 정확도는 "정확", "조금 틀림", "많이 틀림"의 세 가지로 구분됩니다. 
+        
+        :param None: 이 함수는 별도의 매개변수를 받지 않습니다.
+        :raise FileNotFoundError: 오디오 파일을 찾을 수 없거나 경로가 유효하지 않을 경우 발생합니다.
+        :raise ValueError: 업로드된 오디오 파일이 인식되지 않을 경우 발생합니다.
+        :return: None
+        :rtype: None
+        """
         # Initialize GUI
         root = Tk()
         root = self.pronunciation_initialize_gui(root, width=800, height=500, bg_color="#FFFFFF")
@@ -378,24 +378,10 @@ class total_game:
 
         root.mainloop()
 
-    """
-
-
-    사용하는 방법
-    from total_game import total_game
-
-    if __name__ == "__main__":
-    tg=total_game()
-    tg.pronunciation_app()
-
-    """
-
-
 # group photo analyzer
 
 
     def group_initialize_gui(self, state):
-        """GUI 초기화"""
         root = state["root"]
         root.title("Group Photo Analysis")
         root.geometry("500x600")
@@ -414,7 +400,6 @@ class total_game:
 
 
     def select_image(self, state):
-        """이미지 파일 선택"""
         image_path = filedialog.askopenfilename(filetypes=[("Image Files", "*.jpg;*.jpeg;*.png")])
         if image_path:
             state["image_path"] = image_path
@@ -426,13 +411,13 @@ class total_game:
             state["img_label"].text = image_path
 
     def save_result_image(self, image, save_path="output.jpg"):
-        """분석 결과 이미지를 저장"""
+
         cv2.imwrite(save_path, image)
         messagebox.showinfo("Image Saved", f"분석된 이미지를 저장했습니다.\n경로: {os.path.abspath(save_path)}")
 
 
     def start_analysis(self, state):
-        """분석 시작"""
+
         if not state["image_path"]:
             messagebox.showerror("Error", "이미지를 선택하세요.")
             return
@@ -446,7 +431,7 @@ class total_game:
 
 
     def analyze_group_photo(self, state, image_path, mission, confidence_threshold=0.5):
-        """YOLO로 사람 감지 후 Mediapipe로 분석"""
+
         image = cv2.imread(image_path)
         if image is None:
             messagebox.showerror("Error", "이미지를 불러올 수 없습니다.")
@@ -481,7 +466,6 @@ class total_game:
 
 
     def analyze_person(self, image_region, person_id):
-        """개별 사람의 특징 분석"""
         features = []
         h, w, _ = image_region.shape
 
@@ -510,8 +494,19 @@ class total_game:
         return features
 
 
-    def group_photo_analyzer_app(self):
-        """그룹 사진 분석 앱 실행"""
+    def GroupPhotoAnalyzerApp(self):
+        """
+        사용자가 업로드한 사진 속 손 모양을 분석하고 랜덤하게 벌칙 대상을 선택합니다
+        
+        :param state: 앱 상태를 저장하는 딕셔너리. 
+                       예: root, image_path, model, img_label, mission_entry 등의 GUI 상태와 모델 정보를 포함.
+        :type state: dict
+        :raise FileNotFoundError: YOLO 모델 파일이 존재하지 않을 경우 발생합니다.
+        :raise ValueError: 선택된 이미지 경로가 없거나 분석 중 오류가 발생한 경우 발생합니다.
+        :return: None
+        :rtype: None
+        """
+
         root = Tk()
 
         state = {
@@ -527,10 +522,17 @@ class total_game:
 
 # receipt
       
-    def receipt(self):
-            """
-            영수증 이미지에서 금액을 추출하고, 인원 수로 나누어 금액을 계산하는 모든 작업을 하나의 함수에서 처리하는 함수.
-            """
+    def Receipt(self):
+        """
+        이미지에서 금액을 추출하여 인원 수에 따라 1인당 금액을 계산합니다.
+
+        :param Kind: 이 함수는 인자를 받지 않습니다
+        :raise ValueError: 유효하지 않은 이미지 경로 또는 금액 추출 실패 시 발생합니다.
+        :raise FileNotFoundError: Tesseract 실행 파일 또는 이미지 파일을 찾을 수 없을 경우 발생합니다.
+        :return: None
+        :rtype: None
+        """
+
             try:
                 # Tkinter 메인 창 생성
                 root = tk.Tk()
