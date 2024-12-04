@@ -24,7 +24,13 @@ class total_game:
     def __init__(self):
         pass
 
+# roulette
+    
     def initialize_pygame(self, width, height):
+        """
+        룰렛을 만들고 룰렛이 돌아가는 애니메이션 창을 띄웁니다. ".RouletteGame([values])" 함수를 사용하여 실행시킬 수 있습니다.
+        [values]에는 룰렛에 돌리고 싶은 데이터를 리스트 형태로 원하는 개수만큼 문자열 형태로 입력한다.
+        """
         pygame.init()
         screen = pygame.display.set_mode((width, height))
         pygame.display.set_caption("Roulette")
@@ -32,12 +38,12 @@ class total_game:
         return screen, clock
 
     def draw_roulette(self, screen, font, values, angle, width, height):
-        screen.fill((60, 0, 0))  # Background color (brown)
+        screen.fill((60, 0, 0))  # Background color
         radius = min(width, height) // 2 - 40
         triangle_size = 15
         center = (width // 2, height // 2)
 
-        colors = [(255, 0, 0), (0, 0, 0)]  # Red and Black for segments
+        colors = [(255, 0, 0), (0, 0, 0)]  # Red and Black - roulette plate
 
         for i, value in enumerate(values):
             start_angle = math.radians(360 / len(values) * i + angle)
@@ -74,9 +80,8 @@ class total_game:
         index = int(arrow_angle // (360 / len(values)))
         return values[index]
 
-    def roulette_game(self, values):
+    def RouletteGame(self, values):
         width, height = 500, 500
-        # Use self to call the initialize_pygame method
         screen, clock = self.initialize_pygame(width, height)
         font = pygame.font.SysFont("malgungothic", 20)
 
@@ -105,15 +110,17 @@ class total_game:
                         speed = 0
                         is_spinning = False
                         is_stopping = False
-                        result = self.get_result(values, angle)  # Use self
+                        result = self.get_result(values, angle)
                         print(f"Selected value: {result}")
 
-            self.draw_roulette(screen, font, values, angle, width, height)  # Use self
+            self.draw_roulette(screen, font, values, angle, width, height)
             pygame.display.flip()
             clock.tick(60)
 
         pygame.quit()
-  
+
+# guesse person
+    
     def guesse_game_app(self,images):
         """
         인물 맞추기 게임을 실행합니다. 이미지가 랜덤 순서로 표시됩니다.
@@ -187,7 +194,7 @@ class total_game:
         root.mainloop()
 
   
-# 음성 코드
+# pronunciation
 
     def pronunciation_initialize_gui(self, root, width, height, bg_color):
         root.title("어려운 문장 발음 평가 프로그램")
@@ -353,7 +360,7 @@ class total_game:
         root.mainloop()
 
 
-#사진 코드
+# group photo analyzer
 
 
     def group_initialize_gui(self, state):
@@ -487,7 +494,7 @@ class total_game:
         self.group_initialize_gui(state)
         root.mainloop()
 
-#영수증 코드
+# receipt
       
     def receipt(self):
             """
