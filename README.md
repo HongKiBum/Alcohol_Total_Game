@@ -24,19 +24,36 @@
 ---
 
 ## 사용방법
+'''
+from total_game import total_game
 
---
+tg = total_game()
+
+#비용 계산
+tg.Receipt()
+
+#취한 정도 파악 게임
+tg.PronunciationApp()
+
+#사진 벌칙 게임
+tg.GroupPhotoAnalyzerApp()
+
+#사진 기반 인물 퀴즈
+tg.GuesseGameApp(images)
+
+#룰렛 벌칙 게임
+tg.Rouletteame(['test1','test2','test3'])
+
+---
 
 ## 📦 설치
 
 ### Prerequisites
 - Python 3.8 이상이 필요합니다
 
-### 🛠️ Tesseract OCR 설치 방법
+#### 🛠️ Tesseract OCR 설치 방법
 
 이 프로젝트의 OCR 기능은 **Tesseract OCR**에 의존합니다. 운영 체제에 따라 아래의 설치 방법을 참고하세요.
-
----
 
 #### macOS
 1. Homebrew를 사용하여 Tesseract를 설치합니다.
@@ -44,16 +61,12 @@
 2. 설치 확인:
    - 터미널에서 `tesseract --version` 명령어를 실행해 Tesseract 버전이 출력되는지 확인하세요.
 
----
-
 #### Ubuntu/Linux
 1. APT 패키지 관리자를 사용하여 Tesseract를 설치합니다.
    - `sudo apt-get update`
    - `sudo apt-get install tesseract-ocr`
 2. 설치 확인:
    - 터미널에서 `tesseract --version` 명령어를 실행해 Tesseract 버전이 출력되는지 확인하세요.
-
----
 
 #### Windows
 1. [Tesseract 다운로드 페이지](https://github.com/UB-Mannheim/tesseract/wiki)에서 설치 파일(.exe)을 다운로드합니다.
@@ -63,20 +76,4 @@
 4. 환경 변수 설정이 필요한 경우:
    - "내 PC" → "속성" → "고급 시스템 설정" → "환경 변수"로 이동합니다.
    - "Path" 변수에 Tesseract 설치 경로를 추가하세요.
-
----
-
-#### 설치 확인
-- Tesseract가 정상적으로 설치되었는지 확인하려면, 명령어 `tesseract --version`을 실행하세요.
-- 설치가 정상적으로 완료되었을 경우, Tesseract 버전 정보가 출력됩니다.
-
----
-
-#### Python에서 사용하기 위한 추가 설치
-1. Python 패키지 `pytesseract`를 설치해야 합니다.
-   - `pip install pytesseract`
-2. 설치 후, Python 코드에서 아래와 같이 Tesseract 경로를 설정합니다:
-   ```python
-   import pytesseract
-   pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
