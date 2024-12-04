@@ -197,6 +197,7 @@ class total_game:
 # pronunciation
 
     def pronunciation_initialize_gui(self, root, width, height, bg_color):
+        
         root.title("어려운 문장 발음 평가 프로그램")
         root.geometry(f"{width}x{height}")
         root.configure(bg=bg_color)
@@ -246,6 +247,12 @@ class total_game:
 
 
     def evaluate_pronunciation(self, correct_text, recorded_text):
+                """
+        사용자가 발음한 텍스트와 기준 문장을 비교하여 발음 정확도를 평가합니다.
+        - 단어별 유사도를 계산하고 평균 유사도를 바탕으로 발음의 정확성을 판별합니다.
+        - 정확도는 "정확", "조금 틀림", "많이 틀림"으로 구분됩니다.
+        - 결과로 발음 평가와 세부 비교 정보를 반환합니다.
+        """
         correct_words = re.findall(r'\S+', correct_text)
         recorded_words = re.findall(r'\S+', recorded_text)
 
@@ -273,6 +280,12 @@ class total_game:
 
 
     def recognize_audio(self, file_path):
+                """
+    업로드된 오디오 파일을 텍스트로 변환하는 기능을 수행하는 함수입니다.
+    - 음성 파일을 `speech_recognition` 라이브러리를 사용해 텍스트로 변환합니다.
+    - 한국어(Korean) 인식을 위해 `ko-KR` 설정을 사용합니다.
+    - 음성을 인식하지 못하거나 서비스 오류가 발생할 경우 적절한 에러 메시지를 반환합니다.
+    """  
         recognizer = sr.Recognizer()
         audio_file = sr.AudioFile(file_path)
 
@@ -305,6 +318,12 @@ class total_game:
 
 
     def pronunciation_app(self):
+                """
+    발음 평가 게임을 실행하는 메인 함수입니다.
+    - GUI를 초기화하고 사용자 인터페이스 요소(라벨, 버튼 등)를 생성합니다.
+    - 사용자가 랜덤 문장을 선택하고, 오디오 파일을 업로드하여 발음 평가를 진행할 수 있도록 연결합니다.
+    - 전체 발음 게임의 흐름을 관리하며, 사용자와의 상호작용을 제공합니다.
+        """  
         # Initialize GUI
         root = Tk()
         root = self.pronunciation_initialize_gui(root, width=800, height=500, bg_color="#FFFFFF")
@@ -358,6 +377,18 @@ class total_game:
         selected_sentence = ""
 
         root.mainloop()
+
+    """
+
+
+    사용하는 방법
+    from total_game import total_game
+
+    if __name__ == "__main__":
+    tg=total_game()
+    tg.pronunciation_app()
+
+    """
 
 
 # group photo analyzer
