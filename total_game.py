@@ -17,6 +17,7 @@ import speech_recognition as sr
 import pytesseract
 import shutil
 import tkinter as tk
+import cv2
 
 
 class total_game:
