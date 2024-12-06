@@ -88,7 +88,7 @@ class total_game:
         :rtype: None
         """
         width, height = 500, 500
-        screen, clock = initialize_pygame(width, height)
+        screen, clock = self.initialize_pygame(width, height)
         font = pygame.font.SysFont("malgungothic", 20)
         result_font = pygame.font.SysFont("malgungothic", 40)
 
@@ -118,10 +118,10 @@ class total_game:
                         speed = 0
                         is_spinning = False
                         is_stopping = False
-                        result = get_result(values, angle)
+                        result = self.get_result(values, angle)
                         print(f"Selected value: {result}")
 
-            draw_roulette(screen, font, values, angle, width, height)
+            self.draw_roulette(screen, font, values, angle, width, height)
 
             # Display the result below the roulette
             if result:
