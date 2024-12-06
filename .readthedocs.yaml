@@ -1,0 +1,10 @@
+# .readthedocs.yaml
+version: 2
+
+sphinx:
+  configuration: docs/source/conf.py  # Sphinx의 설정 파일 경로를 지정
+
+python:
+  version: 3.8  # 사용하려는 Python 버전
+  install:
+    - requirements: docs/requirements.txt  # 필요시 요구 사항 파일 지정
