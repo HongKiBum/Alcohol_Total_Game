@@ -24,7 +24,7 @@
 ---
 
 ## 사용방법
-'''
+```python
 from total_game import total_game
 
 tg = total_game()
@@ -39,21 +39,26 @@ tg.PronunciationApp()
 tg.GroupPhotoAnalyzerApp()
 
 #사진 기반 인물 퀴즈
+images = [
+    {"image": "path_to_image_1.jpg", "answer": "Person 1"},
+    {"image": "path_to_image_2.jpg", "answer": "Person 2"}
+]
 tg.GuesseGameApp(images)
 
 #룰렛 벌칙 게임
-tg.Rouletteame(['test1','test2','test3'])
+tg.RoulettGame(['벌칙1','벌칙2','벌칙3'])
+```
 
 ---
 
-## 📦 설치
+## 📦 설치 방법
 
 ### Prerequisites
 - Python 3.8 이상이 필요합니다
 
 #### 🛠️ Tesseract OCR 설치 방법
 
-이 프로젝트의 OCR 기능은 **Tesseract OCR**에 의존합니다. 운영 체제에 따라 아래의 설치 방법을 참고하세요.
+이 프로젝트의 영수증 비용 계산 기능을 사용하기 위해서는 Tesseract OCR 설치가 필요합니다.
 
 #### macOS
 1. Homebrew를 사용하여 Tesseract를 설치합니다.
@@ -73,7 +78,30 @@ tg.Rouletteame(['test1','test2','test3'])
 2. 설치 중 "Add Tesseract to PATH" 옵션을 선택하세요.
 3. 설치가 완료된 후 Tesseract 경로를 확인합니다.
    - 기본 경로: `C:\Program Files\Tesseract-OCR\tesseract.exe`
+  
+
 4. 환경 변수 설정이 필요한 경우:
    - "내 PC" → "속성" → "고급 시스템 설정" → "환경 변수"로 이동합니다.
    - "Path" 변수에 Tesseract 설치 경로를 추가하세요.
+
+---
+
+## 🤝 기여하기
+
+DrunkFunLib에 기여하고 싶으신가요? 저희는 항상 새로운 아이디어와 개선을 환영합니다!
+
+1. 이 레포지토리를 포크하세요.
+2. 새로운 브랜치를 생성하세요. (git checkout -b feature-새기능)
+3. 변경사항을 커밋하세요. (git commit -m '새로운 기능 추가')
+4. 브랜치를 푸시하세요. (git push origin feature-새기능)
+5. Pull Request를 생성하세요.
+
+---
+
+## 📝 라이선스
+이 프로젝트는 [MIT 라이선스](LICENSE)에 따라 배포됩니다.
+
+---
+
+즐거운 술자리를 위해 DrunkFunLib와 함께하세요! 🎉
 

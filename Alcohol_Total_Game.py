@@ -40,7 +40,6 @@ class total_game:
         center = (width // 2, height // 2 - 50)  # Move roulette upward to make space for result
 
         colors = [(2, 79, 27), (189, 54, 52), (206, 172, 92)]  # plate color
-
         for i, value in enumerate(values):
             start_angle = math.radians(360 / len(values) * i + angle)
             end_angle = math.radians(360 / len(values) * (i + 1) + angle)
@@ -425,7 +424,6 @@ class total_game:
             state["img_label"].config(image=img)
             state["img_label"].image = img
             state["img_label"].text = image_path
-
 
 
     def start_analysis(self, state):
