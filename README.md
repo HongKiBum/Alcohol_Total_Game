@@ -34,6 +34,8 @@ tg.Receipt()
 
 #취한 정도 파악 게임
 tg.PronunciationApp()
+(음성파일은 반드시 웨이브 파일로 업로드 해야합니다.)
+ex) pronunciation.wav
 
 #사진 벌칙 게임
 tg.GroupPhotoAnalyzerApp()
