@@ -1,17 +1,21 @@
 version: 2
 
+# build 설정
 build:
-  os: ubuntu-20.04
+  os: ubuntu-20.04  # 빌드에 사용할 OS
   tools:
-    python: "3.12.2"  # 사용하는 Python 버전만 명시
+    python:
+      version: "3.12"  # Python 버전은 문자열로 설정
   commands:
-    - pip install -r requirements.txt  # 필요한 패키지 설치
+    - pip install -r requirements.txt  # 필요 패키지 설치
     - sphinx-build -b html docs/source docs/build  # Sphinx 빌드 명령어
 
+# Python 설정
 python:
-  version: 3.12.2  # Python 3.12 사용
+  version: "3.12"  # Python 버전 설정
   install:
     - requirements: requirements.txt  # 의존성 설치
 
+# Sphinx 설정
 sphinx:
   configuration: docs/source/conf.py  # Sphinx 설정 파일 경로
