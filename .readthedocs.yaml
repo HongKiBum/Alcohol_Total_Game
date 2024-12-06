@@ -1,10 +1,14 @@
-# .readthedocs.yaml
 version: 2
 
 sphinx:
-  configuration: docs/source/conf.py  # Sphinx의 설정 파일 경로를 지정
+  configuration: docs/source/conf.py  # Path to your Sphinx configuration file
 
 python:
-  version: 3.8  # 사용하려는 Python 버전
+  version: 3.8  # Specify the Python version you are using
   install:
-    - requirements: docs/requirements.txt  # 필요시 요구 사항 파일 지정
+    - requirements: docs/requirements.txt  # If you have a requirements.txt file
+  os: ubuntu-20.04  # Make sure you specify the OS you're building for
+
+build:
+  os: ubuntu-20.04  # Specify the OS if it's not already defined
+
