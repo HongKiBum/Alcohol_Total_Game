@@ -1,15 +1,12 @@
 version: 2
 
-sphinx:
-  configuration: docs/source/conf.py  # Sphinx 설정 파일 경로
+build:
+  image: "latest"  # 최신 버전 사용
 
 python:
-  version: "3.7"  # 올바른 Python 버전 지정
+  version: 3.12.2  # 사용하는 Python 버전으로 수정 (예: 3.8, 3.9 등)
   install:
-    - requirements: docs/requirements.txt  # 필요한 패키지 설치
+    - requirements: requirements.txt  # 필요한 패키지가 있는 경우 requirements 파일 명시
 
-build:
-  os: ubuntu-20.04  # 운영 체제
-  commands:
-    - pip install -r docs/requirements.txt  # 라이브러리 설치
-    - sphinx-build -b html docs/source docs/build  # Sphinx로 HTML 빌드
+sphinx:
+  configuration: docs/source/conf.py  # Sphinx 설정 파일의 위치
