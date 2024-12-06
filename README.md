@@ -12,7 +12,42 @@
 2. **취한 정도 파악 게임**  
    - 음성 파일을 입력하면 문장 정확도를 기반으로 사용자의 취한 정도를 측정합니다.
 
-3. **법
+3. **사진 벌칙 게임**  
+   - 사용자가 업로드한 사진 속 손 모양을 분석하고 랜덤하게 벌칙 대상을 선택합니다.
+
+4. **사진 기반 인물 퀴즈**  
+   - 사용자 지정 사진을 입력해 인물 퀴즈를 진행할 수 있습니다.
+
+5. **룰렛 벌칙 게임**  
+   - 사용자가 입력한 벌칙 리스트로 룰렛을 돌려 랜덤하게 벌칙을 선정합니다.
+
+---
+
+## 사용방법
+''''python
+from total_game import total_game
+
+tg = total_game()
+
+#비용 계산
+tg.Receipt()
+
+#취한 정도 파악 게임
+tg.PronunciationApp()
+
+#사진 벌칙 게임
+tg.GroupPhotoAnalyzerApp()
+
+#사진 기반 인물 퀴즈
+tg.GuesseGameApp(images)
+
+#룰렛 벌칙 게임
+tg.Rouletteame(['test1','test2','test3'])
+''''
+
+---
+
+## 📦 설치 방법
 
 ### Prerequisites
 - Python 3.8 이상이 필요합니다
