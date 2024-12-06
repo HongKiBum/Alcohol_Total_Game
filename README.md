@@ -24,7 +24,7 @@
 ---
 
 ## 사용방법
-''''python
+```python
 from total_game import total_game
 
 tg = total_game()
@@ -39,11 +39,15 @@ tg.PronunciationApp()
 tg.GroupPhotoAnalyzerApp()
 
 #사진 기반 인물 퀴즈
+images = [
+    {"image": "path_to_image_1.jpg", "answer": "Person 1"},
+    {"image": "path_to_image_2.jpg", "answer": "Person 2"}
+]
 tg.GuesseGameApp(images)
 
 #룰렛 벌칙 게임
-tg.Rouletteame(['test1','test2','test3'])
-''''
+tg.RoulettGame(['벌칙1','벌칙2','벌칙3'])
+```
 
 ---
 
@@ -95,7 +99,7 @@ DrunkFunLib에 기여하고 싶으신가요? 저희는 항상 새로운 아이�
 ---
 
 ## 📝 라이선스
-이 프로젝트는 MIT 라이선스에 따라 배포됩니다.
+이 프로젝트는 [MIT 라이선스](LICENSE)에 따라 배포됩니다.
 
 ---
 
