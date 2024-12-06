@@ -3,13 +3,13 @@ version: 2
 build:
   os: ubuntu-20.04
   tools:
-    python: "3.12"  # 사용하는 Python 버전만 명시
+    python: "3.12.2"  # 사용하는 Python 버전만 명시
   commands:
     - pip install -r requirements.txt  # 필요한 패키지 설치
     - sphinx-build -b html docs/source docs/build  # Sphinx 빌드 명령어
 
 python:
-  version: 3.12  # Python 3.12 사용
+  version: 3.12.2  # Python 3.12 사용
   install:
     - requirements: requirements.txt  # 의존성 설치
 
