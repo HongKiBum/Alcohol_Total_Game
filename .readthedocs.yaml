@@ -13,17 +13,17 @@ build:
 python:
   version: "3.11"  # Python 버전 설정 (문자열로)
   install:
-    - pip
-    - sphinx
-    - sphinx-rtd-theme
-    - pygame==2.6.1
-    - numpy==1.26.4
-    - ultralytics==8.3.40
-    - mediapipe==0.10.18
-    - speechrecognition==3.11.0
-    - pytesseract==0.3.13
-    - opencv-python==4.10.0.84
-    - Pillow==11.0.0
+    - { install: "pip" }
+    - { install: "sphinx" }
+    - { install: "sphinx-rtd-theme" }
+    - { install: "pygame==2.6.1" }
+    - { install: "numpy==1.26.4" }
+    - { install: "ultralytics==8.3.40" }
+    - { install: "mediapipe==0.10.18" }
+    - { install: "speechrecognition==3.11.0" }
+    - { install: "pytesseract==0.3.13" }
+    - { install: "opencv-python==4.10.0.84" }
+    - { install: "Pillow==11.0.0" }
 
 # Sphinx 설정
 sphinx:
