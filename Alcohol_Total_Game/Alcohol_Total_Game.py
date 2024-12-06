@@ -21,6 +21,16 @@ import cv2
 
 
 class total_game:
+    """
+    Alcohol Total Game 클래스
+
+    이 클래스는 다양한 게임 및 유틸리티 기능을 제공합니다:
+    - 룰렛 게임
+    - 인물 맞추기 게임
+    - 발음 평가 게임
+    - 그룹 사진 분석 게임
+    - 영수증 나누기 계산기
+    """
     def __init__(self):
         pass
 
@@ -626,4 +636,3 @@ class total_game:
         
         except Exception as e:
             messagebox.showerror("에러", f"전체 프로그램 실행 중 오류 발생: {e}")
-    
