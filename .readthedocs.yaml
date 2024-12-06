@@ -4,7 +4,7 @@ sphinx:
   configuration: docs/source/conf.py  # Sphinx 설정 파일 경로
 
 python:
-  version: "3.8"  # 올바른 Python 버전 지정
+  version: "3.7"  # 올바른 Python 버전 지정
   install:
     - requirements: docs/requirements.txt  # 필요한 패키지 설치
 
