@@ -4,20 +4,7 @@ version: 2
 build:
   os: ubuntu-20.04  # 빌드에 사용할 OS
   tools:
-    python:
-      version: "3.11"  # Python 버전을 3.11로 설정
-      install:
-        - pip
-        - sphinx
-        - sphinx-rtd-theme
-        - pygame==2.6.1
-        - numpy==1.26.4
-        - ultralytics==8.3.40
-        - mediapipe==0.10.18
-        - speechrecognition==3.11.0
-        - pytesseract==0.3.13
-        - opencv-python==4.10.0.84
-        - Pillow==11.0.0
+    python: "3.11"  # Python 버전을 문자열로 설정
   commands:
     - pip install -r requirements.txt  # 필요 패키지 설치
     - sphinx-build -b html docs/source docs/build  # Sphinx 빌드 명령어
