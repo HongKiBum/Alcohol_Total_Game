@@ -9,7 +9,7 @@ import os
 import sys
 
 # Alcohol_Total_Game의 src 폴더를 경로에 추가
-sys.path.insert(0, os.path.abspath('../../Alcohol_Total_Game/Alcohol_Total_Game'))
+sys.path.insert(0, os.path.abspath('../../'))
 
 # 확장 기능 설정
 extensions = [
