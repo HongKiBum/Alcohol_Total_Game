@@ -25,7 +25,7 @@
 
 ## 사용방법
 ```python
-from total_game import total_game
+from Alcohol_Total_Game import total_game
 
 tg = total_game()
 
@@ -54,6 +54,9 @@ tg.RoulettGame(['벌칙1','벌칙2','벌칙3'])
 ---
 
 ## 📦 설치 방법
+
+- pip install Alcohol_Total_Game
+
 
 ### Prerequisites
 - Python 3.8 이상이 필요합니다
