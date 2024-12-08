@@ -48,7 +48,7 @@ images = [
 tg.GuesseGameApp(images)
 
 #룰렛 벌칙 게임
-tg.RoulettGame(['벌칙1','벌칙2','벌칙3'])
+tg.RouletteGame(['벌칙1','벌칙2','벌칙3'])
 ```
 
 ---
