@@ -45,7 +45,7 @@ images = [
     {"image": "path_to_image_1.jpg", "answer": "Person 1"},
     {"image": "path_to_image_2.jpg", "answer": "Person 2"}
 ]
-tg.GuesseGameApp(images)
+tg.GuessePersonGame(images)
 
 #룰렛 벌칙 게임
 tg.RouletteGame(['벌칙1','벌칙2','벌칙3'])
