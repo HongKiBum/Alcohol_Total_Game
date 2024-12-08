@@ -34,7 +34,7 @@ tg.Receipt()
 
 #취한 정도 파악 게임
 tg.PronunciationApp()
-(음성파일은 반드시 웨이브 파일로 업로드 해야합니다.)
+#음성파일은 반드시 웨이브 파일로 업로드 해야합니다.
 ex) pronunciation.wav
 
 #사진 벌칙 게임
@@ -93,7 +93,7 @@ tg.RouletteGame(['벌칙1','벌칙2','벌칙3'])
 
 ## 🤝 기여하기
 
-DrunkFunLib에 기여하고 싶으신가요? 저희는 항상 새로운 아이디어와 개선을 환영합니다!
+Alcohol_Total_Game 에 기여하고 싶으신가요? 저희는 항상 새로운 아이디어와 개선을 환영합니다!
 
 1. 이 레포지토리를 포크하세요.
 2. 새로운 브랜치를 생성하세요. (git checkout -b feature-새기능)
