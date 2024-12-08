@@ -1,6 +1,6 @@
-# 🍻 술게임 라이브러리 (Total_Game) 
+# 🍻 술게임 라이브러리 (Alcohol_Total_Game) 
 
-**Alcohol_Total_Game**은은 술자리에서 즐길 수 있는 다양한 게임들을 손쉽게 구현할 수 있도록 도와주는 Python 라이브러리입니다!
+**Alcohol_Total_Game**은 술자리에서 즐길 수 있는 다양한 게임들을 손쉽게 구현할 수 있도록 도와주는 Python 라이브러리입니다!
 
 ---
 
